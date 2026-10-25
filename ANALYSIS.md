@@ -57,3 +57,14 @@
 | 50,000 | 65.55 | 89.63 |
 
 **Analysis**: On smaller and medium graphs, the performance is comparable, with Prim slightly faster at n=1000 due to not requiring a full sort. However, as the graph grows to 50,000 vertices, Kruskal becomes noticeably faster. This is because Kruskal's bottleneck is sorting the edges (O(E log E)), which is highly optimized in Java, while Prim's performance heavily depends on the PriorityQueue (O(E log V)), which incurs more overhead due to object creation and comparisons in the heap.
+
+## 8. Sources and AI Assistance
+
+- **Sources**: The algorithms were implemented based on standard textbook descriptions (Cormen et al., "Introduction to Algorithms") and lecture materials. No external graph libraries were used; only standard Java collections (`ArrayList`, `PriorityQueue`, `HashMap`) as permitted by the assignment.
+- **AI Assistance**: This was a complex and challenging assignment. AI assistance was heavily utilized throughout the process. Specifically, AI was used for:
+    1. Debugging and converting recursive DFS implementations into iterative ones to prevent `StackOverflowError` on deep graphs (100k nodes).
+    2. Generating custom JSONL test cases (boundaries, deep chains, cycles, tied optima) and the Python script (`run_tests.py`) to validate them against alternative correct answers.
+    3. Writing the Java benchmark class to compare Kruskal and Prim performance.
+    4. Formatting and structuring the `ANALYSIS.md` document and debugging compilation/execution errors.
+
+  All final code was reviewed, understood, and tested by the student to ensure correctness.
