@@ -1,4 +1,5 @@
 Student: Asylkhan Tolganai
+
 # Algorithm Analysis
 
 ## 1. DSU (Disjoint Set Union)
@@ -49,7 +50,7 @@ Student: Asylkhan Tolganai
 - **Route reconstruction**: Helper walks back via `parent_edge` from target to source. Tested for reachable target, source itself, unreachable target, and tied/parallel edges.
 
 ## 7. Kruskal vs Prim Benchmark
-*The benchmark was run on randomly generated graphs with a fixed seed (`Random(42)`), using 3 edges per vertex on average. The median of 5 runs is reported. Warm-up runs were performed before timing. JVM compilation time is excluded.
+The benchmark was run on randomly generated graphs with a fixed seed (`Random(42)`), using 3 edges per vertex on average. The median of 5 runs is reported. Warm-up runs were performed before timing. JVM compilation time is excluded.
 
 | Graph Size (n) | Kruskal median (ms) | Prim median (ms) |
 | :--- | :--- | :--- |
