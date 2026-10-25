@@ -1,3 +1,10 @@
+
+# Build and Run Instructions
+
+To build and run the project (Java):
+```sh
+javac -d . src/Java/*.java
+java Main
 # Custom Tests
 
 This folder contains custom tests for the graph algorithms, covering edge cases, deep graphs, and non-unique answers.

@@ -1,3 +1,4 @@
+Student: Asylkhan Tolganai
 # Algorithm Analysis
 
 ## 1. DSU (Disjoint Set Union)
