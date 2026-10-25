@@ -1,11 +1,26 @@
-# Your tests / Ваши тесты
+# Custom Tests
 
-Create your own JSON Lines inputs here, together with expected and actual outputs and an explanation of each test. Run a file from the repository root:
+This folder contains custom tests for the graph algorithms, covering edge cases, deep graphs, and non-unique answers.
 
-```sh
-python tools/run.py --input tests/my_cases.jsonl
-```
+## How to run tests
 
-Create `my_cases.jsonl` before running this example command. The launcher prints actual results; compare them with independently justified expected answers. Your files are not discovered automatically. Call your route helper directly in your test code. See the root README for all requirements.
+From the repository root, run:
 
-Создайте здесь свои входы JSON Lines, ожидаемые и фактические результаты и объяснения тестов. Команда выше запускает созданный вами файл, но не сравнивает ответы автоматически. Функцию восстановления пути вызывайте непосредственно из своего тестового кода. Полные требования приведены в README в корне репозитория.
+    python tests/run_tests.py
+
+This script:
+
+1. Builds the Java project.
+2. Reads requests from `tests/inputs/*.jsonl`.
+3. Runs the program and saves actual outputs to `tests/actual/*.jsonl`.
+4. Compares actual outputs with `tests/expected/*.jsonl` using `tools/public_validate.py` (which correctly handles alternative valid answers like different MSTs or topological orders).
+5. Prints `OK` for passing tests and `FAIL` with details for failing ones.
+
+## Test Cases Explanation
+
+- **DSU (`my_dsu.jsonl`)**: Tests self-union (no change), empty graph (`n=0`), a growing star graph, and union by size behavior.
+- **Kruskal (`my_kruskal.jsonl`)**: Tests parallel edges, self-loops, negative weights, 64-bit total cost (to ensure `long` is used), and tied optima (accepts any valid MST).
+- **Prim (`my_prim.jsonl`)**: Tests the same complex graph as Kruskal and verifies Prim restarts correctly in disconnected components.
+- **SCC (`my_scc.jsonl`)**: Tests a simple chain, a cycle with a tail, and self-loops with parallel edges. Accepts any valid component labeling.
+- **Topo (`my_topo.jsonl`)**: Tests a 2-node cycle, an empty graph (isolated vertices), parallel edges, and a disconnected cycle. Accepts any valid topological order.
+- **DAG (`my_dag.jsonl`)**: Tests unreachable vertices, tied paths, parallel edges (must pick min weight), and a global cycle (even if unreachable from source). Accepts any valid shortest-path witness.

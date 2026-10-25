@@ -1,0 +1,4 @@
+{"cost":5,"edge_ids":[1,3],"components":1}
+{"cost":-6,"edge_ids":[0,1],"components":3}
+{"cost":2000000000,"edge_ids":[0,1],"components":1}
+{"cost":2,"edge_ids":[0,1],"components":1}

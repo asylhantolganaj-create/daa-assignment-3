@@ -1,0 +1,4 @@
+{"acyclic": false, "order": []}
+{"acyclic": true, "order": [2, 1, 0]}
+{"acyclic": true, "order": [0, 1, 2]}
+{"acyclic": false, "order": []}
